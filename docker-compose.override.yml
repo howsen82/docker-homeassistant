@@ -1,0 +1,13 @@
+version: '3.9'
+
+services:
+  homeassistant:
+    container_name: homeassistant
+    image: homeassistant/home-assistant
+    environment:
+      - TZ=Asia/Kuching
+    volumes:
+      - /data/homeassistant/config:/config
+    ports:
+      - 8123:8123
+    restart: unless-stopped
